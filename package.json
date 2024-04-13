@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd server && node src/index.js",
+    "start": "node server/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
