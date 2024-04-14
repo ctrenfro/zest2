@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Bold";
+  src: local("PTSansNarrow-Bold");
+  src: url("../src/fonts/PTSansNarrow-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Regular";
+  src: local("PTSansNarrow-Regular");
+  src: url("./fonts/PTSansNarrow-Regular.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-family: "Nunito", "Regular", "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
