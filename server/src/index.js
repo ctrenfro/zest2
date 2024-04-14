@@ -24,15 +24,15 @@ dotenv.config();
 
 connectDB();
 
-app.get("/*", function (req, res) {
-  res.sendFile("../build/index.html", function (err) {
-    if (err) {
-      res.status(500).send(err);
-    }
-  });
-});
+// app.get("/*", function (req, res) {
+//   res.sendFile("../build/index.html", function (err) {
+//     if (err) {
+//       res.status(500).send(err);
+//     }
+//   });
+// });
 
-//app.use(express.static(path.join(__dirname + "/recipebuilder/public")));
+app.use(express.static("../../recipebuilder/build/index.html"));
 
 app.use(credentials);
 
