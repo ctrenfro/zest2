@@ -32,7 +32,7 @@ connectDB();
 //   });
 // });
 
-app.use(express.static("../../recipebuilder/build/index.html"));
+app.use(express.static("../../recipebuilder/public"));
 
 app.use(credentials);
 
