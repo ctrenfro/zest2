@@ -18,7 +18,7 @@ const app = express();
 import recipes from "./routes/recipes.js";
 import * as url from "url";
 
-const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
+//const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
 dotenv.config();
 
