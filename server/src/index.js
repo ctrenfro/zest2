@@ -18,13 +18,14 @@ const app = express();
 import recipes from "./routes/recipes.js";
 import * as url from "url";
 
-//const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
+const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 
 dotenv.config();
 
 connectDB();
+
 app.get("/*", function (req, res) {
-  res.sendFile(__dirname, "../recipebuilder/build/index.html", function (err) {
+  res.sendFile("../build/index.html", function (err) {
     if (err) {
       res.status(500).send(err);
     }
