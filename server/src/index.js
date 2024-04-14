@@ -24,7 +24,7 @@ dotenv.config();
 
 connectDB();
 app.get("/*", function (req, res) {
-  res.sendFile(__dirname + "/recipebuilder/build/index.html", function (err) {
+  res.sendFile("../../recipebuilder/build/index.html", function (err) {
     if (err) {
       res.status(500).send(err);
     }
