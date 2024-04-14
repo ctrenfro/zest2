@@ -23,15 +23,15 @@ const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
 dotenv.config();
 
 connectDB();
-// app.get("/*", function (req, res) {
-//   res.sendFile("../../recipebuilder/build/index.html", function (err) {
-//     if (err) {
-//       res.status(500).send(err);
-//     }
-//   });
-// });
+app.get("/*", function (req, res) {
+  res.sendFile(__dirname + "/recipebuilder/build/index.html", function (err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
+});
 
-app.use(express.static(path.join(__dirname + "/recipebuilder/public")));
+//app.use(express.static(path.join(__dirname + "/recipebuilder/public")));
 
 app.use(credentials);
 
