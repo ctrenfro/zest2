@@ -26,7 +26,7 @@ connectDB();
 
 app.get("/*", function (req, res) {
   res.sendFile(
-    path.resolve("../recipebuilder/build/index.html"),
+    path.resolve("../../recipebuilder/build/index.html"),
     function (err) {
       if (err) {
         res.status(500).send(err);
