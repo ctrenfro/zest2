@@ -7,7 +7,7 @@ import credentials from "./middleware/credentials.js";
 import { connectDB } from "./config/dbConn.js";
 import mongoose from "mongoose";
 import verifyJWT from "./middleware/verifyJWT.js";
-import path from "path";
+import path, { dirname } from "path";
 import register from "./routes/register.js";
 import auth from "./routes/auth.js";
 import refresh from "./routes/refresh.js";
@@ -19,23 +19,27 @@ import recipes from "./routes/recipes.js";
 import * as url from "url";
 
 const __dirname = url.fileURLToPath(new URL("..", import.meta.url));
-
+console.log(__dirname);
 dotenv.config();
 
 connectDB();
 
-app.get("/*", function (req, res) {
-  res.sendFile(
-    path.resolve("../../recipebuilder/build/index.html"),
-    function (err) {
-      if (err) {
-        res.status(500).send(err);
-      }
-    }
-  );
-});
+// app.get("/*", function (req, res) {
+//   res.sendFile(
+//     path.resolve("../../recipebuilder/build/index.html"),
+//     function (err) {
+//       if (err) {
+//         res.status(500).send(err);
+//       }
+//     }
+//   );
+// });
 
-//app.use(express.static(path.resolve("../../recipebuilder/public")));
+app.use(express.static(path.join(__dirname, "/build")));
+
+app.use("/", function (req, res) {
+  res.sendFile(path.join(__dirname, "/build/index.html"));
+});
 
 app.use(credentials);
 
