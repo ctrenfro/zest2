@@ -1,5 +1,5 @@
 import axios from "axios";
-const BASE_URL = "http://localhost:3500";
+const BASE_URL = "https://zest1-db55533a38ba.herokuapp.com/";
 //"https://zest1-db55533a38ba.herokuapp.com/";
 //"http://localhost:3500";
 
